@@ -1,20 +1,73 @@
+# values.yaml for kube-vip via Helm in control-plane VIP mode
+
+image:
+  repository: ghcr.io/kube-vip/kube-vip
+  pullPolicy: IfNotPresent
+
 config:
-  address: "192.168.100.59"         # The VIP to be used for the Kubernetes API
-  interface: "eth0"             # Network interface to bind kube-vip to
-  controlplane: true
-  services:
-    enable: false               # Only use kube-vip for control plane VIP
+  # This should match your kube-vip virtual IP (e.g. first in MetalLB or manually chosen)
+  address: "192.168.100.59"
 
 env:
-  vip_interface: "192.168.100.59"
+  vip_interface: "eth0"         # Your backend cluster interface
+  vip_arp: "true"
+  vip_cidr: "32"
+  lb_enable: "false"            # Disable kube-vip load balancer mode
+  cp_enable: "true"             # Enable control-plane VIP mode
+  svc_enable: "false"           # Disable service VIP mode (use MetalLB)
+  svc_election: "false"
+  vip_leaderelection: "true"    # Enable leader election for HA
 
-rbac:
+extraArgs: {}
+
+envValueFrom: {}
+
+envFrom: []
+
+extraLabels: {}
+
+imagePullSecrets: []
+
+nameOverride: ""
+fullnameOverride: ""
+namespaceOverride: "kube-system"
+
+serviceAccount:
   create: true
+  annotations: {}
+  name: ""
 
-daemonset:
-  nodeSelector:
-    node-role.kubernetes.io/control-plane: "true"
-  tolerations:
-    - key: "node-role.kubernetes.io/control-plane"
-      operator: "Exists"
-      effect: "NoSchedule"
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext:
+  capabilities:
+    add:
+      - NET_ADMIN
+      - NET_RAW
+    drop:
+      - ALL
+
+resources: {}
+
+volumes: []
+volumeMounts: []
+
+hostAliases: []
+
+nodeSelector: {}
+
+tolerations:
+  - key: "node-role.kubernetes.io/control-plane"
+    operator: "Exists"
+    effect: "NoSchedule"
+
+affinity: {}
+
+podMonitor:
+  enabled: false
+  labels: {}
+  annotations: {}
+
+priorityClassName: ""
