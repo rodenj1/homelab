@@ -11,7 +11,7 @@ spec:
     targetRevision: 0.6.6
     helm:
       valueFiles:
-        - clusters/home-lab/infra/kube-vip/values.yaml
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
