@@ -6,3 +6,6 @@ env:
   svc_enable: "false"           # Disable service VIP mode (use MetalLB)
   svc_election: "false"
   vip_leaderelection: "true"    # Enable leader election for HA
+
+rbac:
+  create: true
