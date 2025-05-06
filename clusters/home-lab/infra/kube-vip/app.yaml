@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-vip
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://kube-vip.github.io/helm-charts/
+    chart: kube-vip
+    targetRevision: 0.6.6
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
