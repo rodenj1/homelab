@@ -14,6 +14,7 @@ spec:
     path: clusters/home-lab
     directory:
       recurse: true
+      exclude: "infra/kube-vip/kube-vip.yaml,infra/kube-vip/kustomization.yaml"
   syncPolicy:
     automated:
       prune: true
