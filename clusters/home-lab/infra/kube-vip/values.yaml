@@ -1,9 +1,12 @@
 config:
-  vip: "192.168.100.59"         # The VIP to be used for the Kubernetes API
+  address: "192.168.100.59"         # The VIP to be used for the Kubernetes API
   interface: "eth0"             # Network interface to bind kube-vip to
   controlplane: true
   services:
     enable: false               # Only use kube-vip for control plane VIP
+
+env:
+  vip_interface: "192.168.100.59"
 
 rbac:
   create: true
