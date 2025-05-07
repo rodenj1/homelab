@@ -13,8 +13,12 @@ spec:
       parameters:
         - name: server.insecure
           value: 'true'
-      # valueFiles:
-      #   - values.yaml
+        - name: configs.cm.resource.customizations
+          value: |
+            apiextensions.k8s.io/CustomResourceDefinition:
+              ignoreDifferences:
+                jsonPointers:
+                - /spec/conversion/webhook/clientConfig/caBundle
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
