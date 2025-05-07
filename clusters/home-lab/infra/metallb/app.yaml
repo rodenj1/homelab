@@ -30,3 +30,4 @@ spec:
 syncPolicy:
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
