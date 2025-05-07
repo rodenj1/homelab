@@ -5,7 +5,7 @@ metadata:
 spec:
   ignoreDifferences:
     - group: apps
-      kind: Deployment
+      kind: '*'
       jsonPointers:
         - /spec/conversion/webhook/clientConfig/caBundle
   destination:
