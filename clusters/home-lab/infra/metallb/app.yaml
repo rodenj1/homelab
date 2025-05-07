@@ -3,6 +3,11 @@ kind: Application
 metadata:
   name: metallb
 spec:
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/conversion/webhook/clientConfig/caBundle
   destination:
     namespace: metallb-system
     server: https://kubernetes.default.svc
