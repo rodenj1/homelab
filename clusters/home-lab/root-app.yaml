@@ -14,7 +14,7 @@ spec:
     path: clusters/home-lab
     directory:
       recurse: true
-      include: "app.yaml
+      include: "app.yaml"
   syncPolicy:
     automated:
       prune: true
