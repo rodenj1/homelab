@@ -13,9 +13,9 @@ spec:
       repoURL: https://charts.longhorn.io/
       targetRevision: v1.8.1
       helm:
-        values: |
-          preUpgradeChecker:
-            jobEnabled: false
+        parameters:
+          - name: preUpgradeChecker.jobEnabled
+            vlaue: 'false'
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
