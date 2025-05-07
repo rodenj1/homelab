@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/rodenj1/homelab
     targetRevision: main
-    path: clusters/home-lab/infra/metallb
+    path: clusters/home-lab/infra/metallb/manifests
   #   path: ''
   #   repoURL: https://metallb.github.io/metallb
   #   targetRevision: 0.14.9
