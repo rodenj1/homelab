@@ -15,7 +15,7 @@ spec:
       helm:
         parameters:
           - name: preUpgradeChecker.jobEnabled
-            vlaue: 'false'
+            value: 'false'
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
