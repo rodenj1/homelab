@@ -4,7 +4,7 @@ metadata:
   name: metallb
 spec:
   ignoreDifferences:
-    - group: apps
+    - group: '*'
       kind: '*'
       jsonPointers:
         - /spec/conversion/webhook/clientConfig/caBundle
