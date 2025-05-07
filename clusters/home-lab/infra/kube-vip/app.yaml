@@ -9,6 +9,9 @@ spec:
     repoURL: https://github.com/rodenj1/homelab
     targetRevision: main
     path: clusters/home-lab/infra/kube-vip
+    directory:
+      include: "*.yaml"
+      exclude: "app.yaml"
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
