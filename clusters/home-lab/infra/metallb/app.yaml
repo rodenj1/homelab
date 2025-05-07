@@ -6,16 +6,22 @@ spec:
   destination:
     namespace: metallb-system
     server: https://kubernetes.default.svc
-  # source:
+  source:
+    repoURL: https://github.com/rodenj1/homelab
+    targetRevision: main
+    path: clusters/home-lab/infra/metallb
   #   path: ''
   #   repoURL: https://metallb.github.io/metallb
   #   targetRevision: 0.14.9
   #   chart: metallb
-  sources: 
-    - repoURL: https://metallb.github.io/metallb
-      chart: metallb
-      targetRevision: 0.14.9
-    - repoURL: https://github.com/rodenj1/homelab
-      targetRevision: main
-      path: clusters/home-lab/infra/metallb
+  # sources: 
+  #   - repoURL: https://metallb.github.io/metallb
+  #     chart: metallb
+  #     targetRevision: 0.14.9
+  #   - repoURL: https://github.com/rodenj1/homelab
+  #     targetRevision: main
+  #     path: clusters/home-lab/infra/metallb
   project: default
+syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
