@@ -19,3 +19,10 @@ spec:
       targetRevision: main
       path: clusters/home-lab/infra/traefik/manifests
   project: default
+
+  syncPolicy:
+    # automated:
+    #   prune: true
+    #   selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
