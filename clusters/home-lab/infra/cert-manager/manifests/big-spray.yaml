@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: bigspray
+  namespace: traefik
+spec:
+  secretName: bigspray-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "*.big-spray.com"
+  dnsNames:
+  - "*.big-spray.com"
+  - big-spray.com
