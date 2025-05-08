@@ -4,6 +4,13 @@ metadata:
   name: cert-manager
   namespace: argocd
 spec:
+  ignoreDifferences:
+    - group: batch
+      kind: Job
+      name: cert-manager-startupapicheck
+      namespace: cert-manager
+      jsonPointers:
+        - /metadata/finalizers
   project: default
   sources:
     - repoURL: https://charts.jetstack.io
@@ -37,3 +44,4 @@ spec:
       selfHeal: false
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
