@@ -4,13 +4,13 @@ metadata:
   name: cert-manager
   namespace: argocd
 spec:
-  ignoreDifferences:
-    - group: batch
-      kind: Job
-      name: cert-manager-startupapicheck
-      namespace: cert-manager
-      jsonPointers:
-        - /metadata/finalizers
+  # ignoreDifferences:
+  #   - group: batch
+  #     kind: Job
+  #     name: cert-manager-startupapicheck
+  #     namespace: cert-manager
+  #     jsonPointers:
+  #       - /metadata/finalizers
   project: default
   sources:
     - repoURL: https://charts.jetstack.io
@@ -20,6 +20,8 @@ spec:
         parameters:
           - name: crds.enabled
             value: 'true'
+          - name: startupapicheck.enabled
+            value: 'false'
           # - name: podDnsPolicy
           #   value: 'None'
           # - name: extraArgs[0]
@@ -44,4 +46,4 @@ spec:
       selfHeal: false
     syncOptions:
       - CreateNamespace=true
-      - RespectIgnoreDifferences=true
+      # - RespectIgnoreDifferences=true
