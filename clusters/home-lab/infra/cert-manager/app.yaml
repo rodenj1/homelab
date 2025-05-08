@@ -13,6 +13,18 @@ spec:
       parameters:
         - name: installCRDs
           value: 'true'
+        - name: podDnsPolicy
+          value: 'None'
+        - name: extraArgs[0]
+          value: '--dns01-recursive-nameservers=1.1.1.1:53,9.9.9.9:53'
+        - name: extraArgs[1]
+          value: '--dns01-recursive-nameservers-only'
+        - name: podDnsConfig.nameservers[0]
+          value: '1.1.1.1'
+        - name: podDnsConfig.nameservers[1]
+          value: '9.9.9.9'
+
+        
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
