@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+spec:
+  destination:
+    namespace: traefik
+    server: https://kubernetes.default.svc
+
+  sources: 
+    - path: ''
+      repoURL: https://traefik.github.io/charts
+      targetRevision: 35.2.0
+      chart: traefik
+      helm:
+        valueFiles:
+          - values.yaml
+    - repoURL: https://github.com/rodenj1/homelab
+      targetRevision: main
+      path: clusters/home-lab/infra/traefik/manifests
+  project: default
