@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sealed-secrects
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rodenj1/homelab
+    targetRevision: main
+    path: clusters/home-lab/infra/sealed-secrets/manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
