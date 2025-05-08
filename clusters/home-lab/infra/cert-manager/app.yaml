@@ -11,7 +11,7 @@ spec:
       targetRevision: v1.17.2
       helm:
         parameters:
-          - name: installCRDs
+          - name: crds.enabled
             value: 'true'
           # - name: podDnsPolicy
           #   value: 'None'
