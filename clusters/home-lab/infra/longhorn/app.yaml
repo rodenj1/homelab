@@ -8,7 +8,7 @@ spec:
     - group: '*'
       kind: '*'
       jsonPointers:
-        - /preserveUnknownFields
+        - /spec/preserveUnknownFields
   syncPolicy:
     automated:
       prune: false
