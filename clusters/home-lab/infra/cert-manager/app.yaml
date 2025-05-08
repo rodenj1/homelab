@@ -23,9 +23,9 @@ spec:
             value: '1.1.1.1'
           - name: podDnsConfig.nameservers[1]
             value: '9.9.9.9'
-    - repoURL: https://github.com/rodenj1/homelab
-      targetRevision: main
-      path: clusters/home-lab/infra/cert-manager/manifests
+    # - repoURL: https://github.com/rodenj1/homelab
+    #   targetRevision: main
+    #   path: clusters/home-lab/infra/cert-manager/manifests
 
         
   destination:
