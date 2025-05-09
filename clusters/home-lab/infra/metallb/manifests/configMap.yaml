@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: metallb-config
+  namespace: metallb-system
+data:
+  config: |
+    apiVersion: metallb.io/v1beta1
+    kind: Config
+    metadata:
+      name: config
+    spec:
+      address-pools:
+      - name: default
+        protocol: layer2
+        addresses:
+        - 192.168.100.60-192.168.100.80  # Adjust the range if needed
