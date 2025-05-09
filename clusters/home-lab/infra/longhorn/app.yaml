@@ -29,7 +29,7 @@ spec:
         parameters:
           - name: preUpgradeChecker.jobEnabled
             value: 'false'
-          - name: createDefaultDiskLabeledNodes
+          - name: defaultSettings.createDefaultDiskLabeledNodes
             value: 'true'
     - repoURL: https://github.com/rodenj1/homelab 
       targetRevision: main 
