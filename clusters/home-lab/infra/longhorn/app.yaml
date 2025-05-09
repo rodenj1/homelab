@@ -25,6 +25,8 @@ spec:
         parameters:
           - name: preUpgradeChecker.jobEnabled
             value: 'false'
+          - name: createDefaultDiskLabeledNodes
+            value: 'true'
     - repoURL: https://github.com/rodenj1/homelab 
       targetRevision: main 
       path: clusters/home-lab/infra/longhorn/manifests
