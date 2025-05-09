@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`dashboard.k3s.bigspray.com`) # change this to your domain
+    - match: Host(`dashboard.k3s.big-spray.com`) # change this to your domain
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth
