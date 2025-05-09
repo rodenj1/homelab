@@ -1,5 +1,6 @@
-deployment:
-  replicas: 3
+traefik:
+  deployment:
+    replicas: 3
 
 # globalArguments:
 #   - "--global.sendanonymoususage=false"
