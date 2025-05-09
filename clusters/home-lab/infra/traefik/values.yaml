@@ -1,7 +1,3 @@
-traefik:
-  deployment:
-    replicas: 3
-
 # globalArguments:
 #   - "--global.sendanonymoususage=false"
 #   - "--global.checknewversion=false"
