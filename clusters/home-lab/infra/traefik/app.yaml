@@ -18,8 +18,10 @@ spec:
     - repoURL: https://github.com/rodenj1/homelab
       targetRevision: main
       path: clusters/home-lab/infra/traefik/manifests
-      directory:
-        recurse: true
+
+    - repoURL: https://github.com/rodenj1/homelab
+      targetRevision: main
+      path: clusters/home-lab/infra/traefik/dashboard
   project: default
 
   syncPolicy:
