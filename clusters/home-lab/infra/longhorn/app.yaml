@@ -9,6 +9,10 @@ spec:
       kind: '*'
       jsonPointers:
         - /spec/preserveUnknownFields
+    - group: '*'
+      kind: 'ServiceAccount'
+      jsonPointers:
+        - /metadata/annotations
   syncPolicy:
     automated:
       prune: false
