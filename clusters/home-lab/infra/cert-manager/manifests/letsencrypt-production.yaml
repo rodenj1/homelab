@@ -19,4 +19,4 @@ spec:
               key: cloudflare-token
         selector:
           dnsZones:
-            - "big-spary.com"
+            - "big-spray.com"
