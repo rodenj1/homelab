@@ -10,11 +10,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/rodenj1/homelab
-    targetRevision: main
     path: clusters/home-lab/
+    targetRevision: main
     directory:
       recurse: true
-      include: "**/app.yaml"
+      include: '{**/app.yaml,**/values.yaml}'
   syncPolicy:
     automated:
       prune: false
