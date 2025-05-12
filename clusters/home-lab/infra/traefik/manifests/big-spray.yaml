@@ -13,3 +13,31 @@ spec:
   dnsNames:
   - "*.big-spray.com"
   - big-spray.com
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-bigspray
+  namespace: argocd
+spec:
+  secretName: bigspray-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "argocd.k3s.big-spray.com"
+  dnsNames:
+  - "argocd.k3s.big-spray.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: longhorn-bigspray
+  namespace: longhorn-system
+spec:
+  secretName: bigspray-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "longhorn.k3s.big-spray.com"
+  dnsNames:
+  - "longhorn.k3s.big-spray.com"
