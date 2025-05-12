@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dashboard-bigspray
+  namespace: traefik
+spec:
+  secretName: dashboard-bigspray-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "dashboard.k3s.big-spray.com"
+  dnsNames:
+  - "dashboard.k3s.big-spray.com"

@@ -15,4 +15,4 @@ spec:
         - name: longhorn-frontend
           port: 80
   tls:
-    secretName: bigspray-tls
+    secretName: longhorn-bigspray
