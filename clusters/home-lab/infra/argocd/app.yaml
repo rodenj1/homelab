@@ -13,7 +13,7 @@ spec:
         parameters:
           - name: server.insecure
             value: 'true'
-          - name: configs.params.server.insecure
+          - name: configs.params."server.insecure"
             value: 'true'
     - repoURL: https://github.com/rodenj1/homelab 
       targetRevision: main 
