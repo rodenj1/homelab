@@ -18,4 +18,4 @@ spec:
         - name: api@internal
           kind: TraefikService
   tls:
-    secretName: bigspray-tls # change this to your secret!!!
+    secretName: dashboard-bigspray-tls # change this to your secret!!!
