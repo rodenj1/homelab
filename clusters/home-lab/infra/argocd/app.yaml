@@ -5,14 +5,18 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://argoproj.github.io/argo-helm
-    chart: argo-cd
-    targetRevision: 8.0.0
-    helm:
-      parameters:
-        - name: server.insecure
-          value: 'true'
+  sources:
+    - repoURL: https://argoproj.github.io/argo-helm
+      chart: argo-cd
+      targetRevision: 8.0.0
+      helm:
+        parameters:
+          - name: server.insecure
+            value: 'true'
+    - repoURL: https://github.com/rodenj1/homelab 
+      targetRevision: main 
+      path: clusters/home-lab/infra/argocd/manifests
+
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
