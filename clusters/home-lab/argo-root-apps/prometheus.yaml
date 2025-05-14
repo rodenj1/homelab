@@ -13,7 +13,7 @@ spec:
     chart: kube-prometheus-stack
     helm:
       valueFiles:
-          - prometheus-values.yaml
+          - ../../../home-lab/argo-root-apps/prometheus-values.yaml
   sources: []
   project: default
   syncPolicy:
