@@ -17,7 +17,6 @@ spec:
     - repoURL: https://github.com/rodenj1/homelab
       targetRevision: main
       ref: values
-  sources: []
   project: default
   syncPolicy:
     syncOptions:
