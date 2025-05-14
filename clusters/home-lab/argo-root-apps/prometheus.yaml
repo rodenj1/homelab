@@ -15,6 +15,7 @@ spec:
       targetRevision: main
       ref: values
   source:
+    repoURL: https://prometheus-community.github.io/helm-charts
     helm:
       valueFiles:
         - $values/clusters/home-lab/argo-root-apps/prometheus-values.yaml
