@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb
+spec:
+  ignoreDifferences:
+    - group: '*'
+      kind: '*'
+      jsonPointers:
+        - /spec/conversion/webhook/clientConfig/caBundle
+  destination:
+    namespace: metallb-system
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/rodenj1/homelab
+    targetRevision: main
+    path: clusters/home-lab/infra/metallb/manifests
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - RespectIgnoreDifferences=true
