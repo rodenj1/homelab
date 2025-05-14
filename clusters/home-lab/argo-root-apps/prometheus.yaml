@@ -13,7 +13,7 @@ spec:
       chart: kube-prometheus-stack
       helm:
         valueFiles:
-            - $values/clusters/home-lab/argo-root-apps/prometheus-values.yaml
+            - $values/clusters/home-lab/argo-root-apps/prometheus-values1.yaml
     - repoURL: https://github.com/rodenj1/homelab
       targetRevision: main
       ref: values
