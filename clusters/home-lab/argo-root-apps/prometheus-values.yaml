@@ -1,0 +1,3 @@
+prometheus:
+  crds:
+    enabled: true
