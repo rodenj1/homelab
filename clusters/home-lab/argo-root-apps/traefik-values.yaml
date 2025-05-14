@@ -1,0 +1,4 @@
+traefik:
+  logs:
+    general:
+      level: DEBUG

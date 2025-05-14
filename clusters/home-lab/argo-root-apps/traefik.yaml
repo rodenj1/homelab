@@ -44,6 +44,8 @@ spec:
             value: 'true'
           - name: service.spec.loadBalancerIP
             value: 192.168.100.60
+        valueFiles:
+          - traefik-values.yaml
     - repoURL: https://github.com/rodenj1/homelab
       targetRevision: main
       path: clusters/home-lab/infra/traefik/manifests
