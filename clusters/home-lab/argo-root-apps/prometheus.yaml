@@ -19,7 +19,7 @@ spec:
           - name: crds.enabled
             value: 'true'
           - name: crds.upgradeJob.enabled
-            value: 'true'
+            value: 'false'
           - name: fullnameOverride
             value: 'prometheus'
           - name: alertmanager.fullnameOverride
