@@ -104,8 +104,8 @@ kubeEtcd:
     scheme: https
     insecureSkipVerify: true
     serverName: localhost
-  endpoints:
-    - port: https
+  # endpoints:
+  #   - port: https
   hostNetwork: true
 
 # kubeScheduler:
