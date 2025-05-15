@@ -1,3 +1,8 @@
+global:
+  dnsService:
+    ipFamilyPolicy: "SingleStack"
+    ipFamilies:
+      - IPv4
 fullnameOverride: prometheus
 
   #defaultRules:
