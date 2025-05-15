@@ -1,8 +1,8 @@
-global:
-  dnsService:
-    ipFamilyPolicy: "SingleStack"
-    ipFamilies:
-      - IPv4
+# global:
+#   dnsService:
+#     ipFamilyPolicy: "SingleStack"
+#     ipFamilies:
+#       - IPv4
 fullnameOverride: prometheus
 
   #defaultRules:
@@ -75,12 +75,12 @@ kubeApiServer:
 
 kubeControllerManager:
   enabled: true
-  service:
-    enabled: true
-    port: 10257
-    ipFamilyPolicy: "SingleStack"
-    ipFamilies:
-      - IPv4
+  # service:
+  #   enabled: true
+  #   port: 10257
+  #   ipFamilyPolicy: "SingleStack"
+  #   ipFamilies:
+  #     - IPv4
   serviceMonitor:
     scheme: https
     insecureSkipVerify: true
@@ -105,12 +105,12 @@ kubeDns:
 
 kubeEtcd:
   enabled: true
-  service:
-    enabled: true
-    port: 2381
-    ipFamilyPolicy: "SingleStack"
-    ipFamilies:
-      - IPv4
+  # service:
+  #   enabled: true
+  #   port: 2381
+  #   ipFamilyPolicy: "SingleStack"
+  #   ipFamilies:
+  #     - IPv4
   serviceMonitor:
     scheme: https
     insecureSkipVerify: true
@@ -128,12 +128,12 @@ kubeEtcd:
 
 kubeScheduler:
   enabled: true
-  service:
-    enabled: true
-    port: 10259
-    ipFamilyPolicy: "SingleStack"
-    ipFamilies:
-      - IPv4
+  # service:
+  #   enabled: true
+  #   port: 10259
+  #   ipFamilyPolicy: "SingleStack"
+  #   ipFamilies:
+  #     - IPv4
   serviceMonitor:
     scheme: https
     insecureSkipVerify: true
@@ -151,12 +151,12 @@ kubeScheduler:
 
 kubeProxy:
   enabled: true
-  service:
-    enabled: true
-    port: 10249
-    ipFamilyPolicy: "SingleStack"
-    ipFamilies:
-      - IPv4
+  # service:
+  #   enabled: true
+  #   port: 10249
+  #   ipFamilyPolicy: "SingleStack"
+  #   ipFamilies:
+  #     - IPv4
   serviceMonitor:
     scheme: http
   hostNetwork: true
