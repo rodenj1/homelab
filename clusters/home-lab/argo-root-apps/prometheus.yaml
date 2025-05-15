@@ -17,9 +17,9 @@ spec:
       helm:
         parameters:
           - name: crds.enabled
-            value: 'true'
+            value: 'false'
           - name: crds.upgradeJob.enabled
-            value: 'true'
+            value: 'false'
         # valueFiles:
         #   - $values/clusters/home-lab/argo-root-apps/prometheus-values.yaml
     - repoURL: https://github.com/rodenj1/homelab
