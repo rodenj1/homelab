@@ -51,8 +51,9 @@ spec:
         #   - name: kubeProxy.endpoints[2]
         #     value: '10.10.0.6'
         valueFiles:
-          - $values/clusters/home-lab/infra/prometheus/values.yaml
+          - $values/values.yaml
     - repoURL: https://github.com/rodenj1/homelab
+      path: 'clusters/home-lab/infra/prometheus'
       targetRevision: main
       ref: values
   # source:
