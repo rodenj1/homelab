@@ -73,8 +73,8 @@ kubeControllerManager:
     - 192.168.100.6
     - 192.168.100.7
 
-kubeControllerManager:
-  enabled: false
+# kubeControllerManager:
+#   enabled: false
   # service:
   #   enabled: true
   #   port: 10257
@@ -103,8 +103,8 @@ kubeEtcd:
 #       #    port: 2381
 #       #    targetPort: 2381
 
-kubeEtcd:
-  enabled: false
+# kubeEtcd:
+#   enabled: false
   # service:
   #   enabled: true
   #   port: 2381
@@ -126,8 +126,8 @@ kubeScheduler:
     - 192.168.100.6
     - 192.168.100.7
 
-kubeScheduler:
-  enabled: false
+# kubeScheduler:
+#   enabled: false
   # service:
   #   enabled: true
   #   port: 10259
@@ -149,8 +149,8 @@ kubeProxy:
 #       #kubeStateMetrics:
 #       #  enabled: true
 
-kubeProxy:
-  enabled: false
+# kubeProxy:
+#   enabled: false
   # service:
   #   enabled: true
   #   port: 10249
