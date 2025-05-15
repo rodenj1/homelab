@@ -78,7 +78,7 @@ kubeControllerManager:
   service:
   #   enabled: true
   #   port: 10257
-  #   ipFamilyPolicy: "SingleStack"
+    ipFamilyPolicy: "SingleStack"
     ipFamilies:
       - IPv4
   # serviceMonitor:
@@ -108,7 +108,7 @@ kubeEtcd:
   service:
   #   enabled: true
   #   port: 2381
-  #   ipFamilyPolicy: "SingleStack"
+    ipFamilyPolicy: "SingleStack"
     ipFamilies:
       - IPv4
   # serviceMonitor:
@@ -131,7 +131,7 @@ kubeScheduler:
   service:
   #   enabled: true
   #   port: 10259
-  #   ipFamilyPolicy: "SingleStack"
+    ipFamilyPolicy: "SingleStack"
     ipFamilies:
       - IPv4
   # serviceMonitor:
@@ -154,7 +154,7 @@ kubeProxy:
   service:
   #   enabled: true
   #   port: 10249
-  #   ipFamilyPolicy: "SingleStack"
+    ipFamilyPolicy: "SingleStack"
     ipFamilies:
       - IPv4
   # serviceMonitor:
