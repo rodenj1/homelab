@@ -15,43 +15,43 @@ spec:
       targetRevision: 72.3.1
       chart: kube-prometheus-stack
       helm:
-        parameters:
-          - name: crds.enabled
-            value: 'true'
-          - name: crds.upgradeJob.enabled
-            value: 'false'
-          - name: fullnameOverride
-            value: 'prometheus'
-          - name: alertmanager.fullnameOverride
-            value: 'alertmanager'
-          - name: grafana.fullnameOverride
-            value: 'grafana'
-          - name: kubeControllerManager.endpoints[0]
-            value: '10.10.0.5'
-          - name: kubeControllerManager.endpoints[1]
-            value: '10.10.0.6'
-          - name: kubeControllerManager.endpoints[2]
-            value: '10.10.0.6'
-          - name: kubeEtcd.endpoints[0]
-            value: '10.10.0.5'
-          - name: kubeEtcd.endpoints[1]
-            value: '10.10.0.6'
-          - name: kubeEtcd.endpoints[2]
-            value: '10.10.0.6'
-          - name: kubeScheduler.endpoints[0]
-            value: '10.10.0.5'
-          - name: kubeScheduler.endpoints[1]
-            value: '10.10.0.6'
-          - name: kubeScheduler.endpoints[2]
-            value: '10.10.0.6'
-          - name: kubeProxy.endpoints[0]
-            value: '10.10.0.5'
-          - name: kubeProxy.endpoints[1]
-            value: '10.10.0.6'
-          - name: kubeProxy.endpoints[2]
-            value: '10.10.0.6'
-        # valueFiles:
-        #   - $values/clusters/home-lab/argo-root-apps/prometheus-values.yaml
+        # parameters:
+        #   - name: crds.enabled
+        #     value: 'true'
+        #   - name: crds.upgradeJob.enabled
+        #     value: 'false'
+        #   - name: fullnameOverride
+        #     value: 'prometheus'
+        #   - name: alertmanager.fullnameOverride
+        #     value: 'alertmanager'
+        #   - name: grafana.fullnameOverride
+        #     value: 'grafana'
+        #   - name: kubeControllerManager.endpoints[0]
+        #     value: '10.10.0.5'
+        #   - name: kubeControllerManager.endpoints[1]
+        #     value: '10.10.0.6'
+        #   - name: kubeControllerManager.endpoints[2]
+        #     value: '10.10.0.6'
+        #   - name: kubeEtcd.endpoints[0]
+        #     value: '10.10.0.5'
+        #   - name: kubeEtcd.endpoints[1]
+        #     value: '10.10.0.6'
+        #   - name: kubeEtcd.endpoints[2]
+        #     value: '10.10.0.6'
+        #   - name: kubeScheduler.endpoints[0]
+        #     value: '10.10.0.5'
+        #   - name: kubeScheduler.endpoints[1]
+        #     value: '10.10.0.6'
+        #   - name: kubeScheduler.endpoints[2]
+        #     value: '10.10.0.6'
+        #   - name: kubeProxy.endpoints[0]
+        #     value: '10.10.0.5'
+        #   - name: kubeProxy.endpoints[1]
+        #     value: '10.10.0.6'
+        #   - name: kubeProxy.endpoints[2]
+        #     value: '10.10.0.6'
+        valueFiles:
+          - $values/clusters/home-lab/infra/prometheus/values.yaml
     - repoURL: https://github.com/rodenj1/homelab
       targetRevision: main
       ref: values
