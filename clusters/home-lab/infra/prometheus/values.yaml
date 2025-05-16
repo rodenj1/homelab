@@ -1,90 +1,22 @@
-# global:
-#   dnsService:
-#     ipFamilyPolicy: "SingleStack"
-#     ipFamilies:
-#       - IPv4
 fullnameOverride: prometheus
-
-  #defaultRules:
-  #  create: true
-  #  rules:
-  #    alertmanager: true
-  #    etcd: true
-  #    configReloaders: true
-  #    general: true
-  #    k8s: true
-  #    kubeApiserverAvailability: true
-  #    kubeApiserverBurnrate: true
-  #    kubeApiserverHistogram: true
-  #    kubeApiserverSlos: true
-  #    kubelet: true
-  #    kubeProxy: true
-  #    kubePrometheusGeneral: true
-  #    kubePrometheusNodeRecording: true
-  #    kubernetesApps: true
-  #    kubernetesResources: true
-  #    kubernetesStorage: true
-  #    kubernetesSystem: true
-  #    kubeScheduler: true
-  #    kubeStateMetrics: true
-  #    network: true
-  #    node: true
-  #    nodeExporterAlerting: true
-  #    nodeExporterRecording: true
-  #    prometheus: true
-  #    prometheusOperator: true
 
 alertmanager:
   fullnameOverride: alertmanager
   enabled: true
-    #  ingress:
-    #    enabled: false
 
 grafana:
   enabled: true
   fullnameOverride: grafana
-    #  forceDeployDatasources: false
-    #  forceDeployDashboards: false
-    #  defaultDashboardsEnabled: true
-    #  defaultDashboardsTimezone: utc
-    #  serviceMonitor:
-    #    enabled: true
-    #  admin:
-    #    existingSecret: grafana-admin-credentials
-    #    userKey: admin-user
-    #    passwordKey: admin-password
 
 kubeApiServer:
   enabled: true
 
-    #kubelet:
-    #  enabled: true
-    #  serviceMonitor:
-    #    metricRelabelings:
-    #      - action: replace
-    #        sourceLabels:
-    #          - node
-    #        targetLabel: instance
-
 kubeControllerManager:
   enabled: true
-  endpoints: # ips of servers 
-    - 192.168.100.5
-    - 192.168.100.6
-    - 192.168.100.7
-
-# kubeControllerManager:
-#   enabled: false
-  # service:
-  #   enabled: true
-  #   port: 10257
-    # ipFamilyPolicy: "PreferSingleStack"
-    # ipFamilies:
-      # - IPv4
-  # serviceMonitor:
-  #   scheme: https
-  #   insecureSkipVerify: true
-  # hostNetwork: true
+  endpoints:
+    - 10.10.0.5
+    - 10.10.0.6
+    - 10.10.0.7
 
 coreDns:
   enabled: true
@@ -94,87 +26,27 @@ kubeDns:
 
 kubeEtcd:
   enabled: true
-  endpoints: # ips of servers
-    - 192.168.100.5
-    - 192.168.100.6
-    - 192.168.100.7
-#       #  service:
-#       #    enabled: true
-#       #    port: 2381
-#       #    targetPort: 2381
-
-# kubeEtcd:
-#   enabled: false
-  # service:
-  #   enabled: true
-  #   port: 2381
-    # ipFamilyPolicy: "PreferSingleStack"
-    # ipFamilies:
-    #   - IPv4
-  # serviceMonitor:
-  #   scheme: https
-  #   insecureSkipVerify: true
-  #   serverName: localhost
-  # endpoints:
-  #   - port: https
-  # hostNetwork: true
+  endpoints:
+    - 10.10.0.5
+    - 10.10.0.6
+    - 10.10.0.7
+  serviceMonitor:
+    scheme: http
 
 kubeScheduler:
   enabled: true
-  endpoints: # ips of servers
-    - 192.168.100.5
-    - 192.168.100.6
-    - 192.168.100.7
-
-# kubeScheduler:
-#   enabled: false
-  # service:
-  #   enabled: true
-  #   port: 10259
-    # ipFamilyPolicy: "PreferSingleStack"
-    # ipFamilies:
-    #   - IPv4
-  # serviceMonitor:
-  #   scheme: https
-  #   insecureSkipVerify: true
-  # hostNetwork: true
+  endpoints:
+    - 10.10.0.5
+    - 10.10.0.6
+    - 10.10.0.7
 
 kubeProxy:
   enabled: true
-  endpoints: # ips of servers
-    - 192.168.100.5
-    - 192.168.100.6
-    - 192.168.100.7
-
-#       #kubeStateMetrics:
-#       #  enabled: true
-
-# kubeProxy:
-#   enabled: false
-  # service:
-  #   enabled: true
-  #   port: 10249
-    # ipFamilyPolicy: "PreferSingleStack"
-    # ipFamilies:
-    #   - IPv4
-  # serviceMonitor:
-  #   scheme: http
-  # hostNetwork: true
+  endpoints:
+    - 10.10.0.5
+    - 10.10.0.6
+    - 10.10.0.7
 
 prometheus:
   enabled: true
-    #  prometheusSpec:
-    #    replicas: 1
-    #    replicaExternalLabelName: "replica"
-    #    ruleSelectorNilUsesHelmValues: false
-    #    serviceMonitorSelectorNilUsesHelmValues: false
-    #    podMonitorSelectorNilUsesHelmValues: false
-    #    probeSelectorNilUsesHelmValues: false
-    #    retention: 6h
-    #    enableAdminAPI: true
-    #    walCompression: true
-    #    scrapeInterval: 30s
-    #    evaluationInterval: 30s
 
-    #thanosRuler:
-    #  enabled: false
