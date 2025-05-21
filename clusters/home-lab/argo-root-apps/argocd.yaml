@@ -15,9 +15,14 @@ spec:
             value: 'true'
           - name: configs.params.server\.insecure
             value: 'true'
+        valueFiles:
+          - $values/clusters/home-lab/infra/argocd/values.yaml
     - repoURL: https://github.com/rodenj1/homelab 
       targetRevision: main 
       path: clusters/home-lab/infra/argocd/manifests
+    - repoURL: https://github.com/rodenj1/homelab
+      targetRevision: main
+      ref: values
 
   destination:
     server: https://kubernetes.default.svc
