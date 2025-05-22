@@ -10,8 +10,8 @@ spec:
   jobLabel: traefik-metrics
   selector:
     matchLabels:
-      app.kubernetes.io/instance: traefik
-      app.kubernetes.io/name: traefik-dashboard
+      app.kubernetes.io/instance: traefik-traefik
+      app.kubernetes.io/name: traefik
   namespaceSelector:
     matchNames:
       - traefik
