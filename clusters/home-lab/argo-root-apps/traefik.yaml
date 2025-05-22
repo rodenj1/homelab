@@ -49,8 +49,8 @@ spec:
             value: '9100' 
           - name: ports.metrics.default.expose 
             value: 'true'
-          - name: additionalArguments[0]
-            value: "--entrypoints.metrics.address=:9100"
+          - name: metrics.prometheus.service.enabled
+            value: 'true'
 
 
         # valueFiles:
