@@ -43,12 +43,6 @@ spec:
             value: 'true'
           - name: service.spec.loadBalancerIP
             value: 192.168.100.60
-          - name: metrics.prometheus.enabled 
-            value: 'true' 
-          - name: ports.metrics.port 
-            value: '9100' 
-          - name: ports.metrics.default.expose 
-            value: 'true'
           - name: metrics.prometheus.service.enabled
             value: 'true'
 
