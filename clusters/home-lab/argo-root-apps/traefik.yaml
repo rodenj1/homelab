@@ -43,12 +43,17 @@ spec:
             value: 'true'
           - name: service.spec.loadBalancerIP
             value: 192.168.100.60
-          - name: metrics.prometheus.enabled 
-            value: 'true' 
-          - name: metrics.prometheus.addEntryPointsLabels 
-            value: 'true' 
-          - name: metrics.prometheus.addServicesLabels 
+          # - name: metrics.prometheus.enabled 
+          #   value: 'true' 
+          # - name: metrics.prometheus.addEntryPointsLabels 
+          #   value: 'true' 
+          # - name: metrics.prometheus.addServicesLabels 
+          #   value: 'true'
+          - name: ports.metrics.port 
+            value: '9100' 
+          - name: ports.metrics.expose 
             value: 'true'
+
 
         # valueFiles:
         #   - traefik-values.yaml
