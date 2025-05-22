@@ -43,6 +43,13 @@ spec:
             value: 'true'
           - name: service.spec.loadBalancerIP
             value: 192.168.100.60
+          - name: metrics.prometheus.enabled 
+            value: 'true' 
+          - name: metrics.prometheus.addEntryPointsLabels 
+            value: 'true' 
+          - name: metrics.prometheus.addServicesLabels 
+            value: 'true'
+
         # valueFiles:
         #   - traefik-values.yaml
     - repoURL: https://github.com/rodenj1/homelab
