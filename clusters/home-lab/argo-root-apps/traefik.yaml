@@ -51,7 +51,7 @@ spec:
           #   value: 'true'
           - name: ports.metrics.port 
             value: '9100' 
-          - name: ports.metrics.expose 
+          - name: ports.metrics.default.expose 
             value: 'true'
 
 
