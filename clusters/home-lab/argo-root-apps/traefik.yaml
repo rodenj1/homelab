@@ -43,8 +43,8 @@ spec:
             value: 'true'
           - name: service.spec.loadBalancerIP
             value: 192.168.100.60
-          # - name: metrics.prometheus.enabled 
-          #   value: 'true' 
+          - name: metrics.prometheus.enabled 
+            value: 'true' 
           # - name: metrics.prometheus.addEntryPointsLabels 
           #   value: 'true' 
           # - name: metrics.prometheus.addServicesLabels 
