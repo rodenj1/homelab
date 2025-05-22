@@ -45,14 +45,12 @@ spec:
             value: 192.168.100.60
           - name: metrics.prometheus.enabled 
             value: 'true' 
-          # - name: metrics.prometheus.addEntryPointsLabels 
-          #   value: 'true' 
-          # - name: metrics.prometheus.addServicesLabels 
-          #   value: 'true'
           - name: ports.metrics.port 
             value: '9100' 
           - name: ports.metrics.default.expose 
             value: 'true'
+          - name: additionalArguments[0]
+            value: "--entrypoints.metrics.address=:9100"
 
 
         # valueFiles:
