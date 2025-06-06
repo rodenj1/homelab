@@ -17,3 +17,24 @@ spec:
           port: 80
   tls:
     secretName: grafana-bigspray-tls # change this to your secret!!!
+
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: prometheus-dashboard
+  namespace: monitoring
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`prometheus.k3s.big-spray.com`) # change this to your domain
+      kind: Rule
+      middlewares: []
+      services:
+        - name: prometheus-prometheus
+          port: 9090
+  tls:
+    secretName: prometheus-bigspray-tls # change this to your secret!!!

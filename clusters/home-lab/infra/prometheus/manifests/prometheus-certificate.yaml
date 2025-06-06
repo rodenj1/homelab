@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prometheus-bigspray
+  namespace: monitoring
+spec:
+  secretName: prometheus-bigspray-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "prometheus.k3s.big-spray.com"
+  dnsNames:
+  - "prometheus.k3s.big-spray.com"
