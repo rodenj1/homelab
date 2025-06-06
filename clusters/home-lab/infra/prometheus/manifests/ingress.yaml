@@ -38,3 +38,24 @@ spec:
           port: 9090
   tls:
     secretName: prometheus-bigspray-tls # change this to your secret!!!
+
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: alertmanager-dashboard
+  namespace: monitoring
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`alertmanager.k3s.big-spray.com`) # change this to your domain
+      kind: Rule
+      middlewares: []
+      services:
+        - name: prometheus-operator
+          port: 9093
+  tls:
+    secretName: alertmanager-bigspray-tls # change this to your secret!!!
