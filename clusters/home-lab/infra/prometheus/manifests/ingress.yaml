@@ -55,7 +55,7 @@ spec:
       kind: Rule
       middlewares: []
       services:
-        - name: prometheus-operator
+        - name: alertmanager-operated
           port: 9093
   tls:
     secretName: alertmanager-bigspray-tls # change this to your secret!!!
