@@ -56,6 +56,9 @@ spec:
       # path: 'clusters/home-lab/infra/prometheus'
       targetRevision: main
       ref: values
+    - repoURL: https://github.com/rodenj1/homelab
+      targetRevision: main
+      path: clusters/home-lab/infra/prometheus/manifests
   # source:
     
   project: default
